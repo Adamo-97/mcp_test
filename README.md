@@ -1,6 +1,30 @@
-# MCP Test - Multi-Server Orchestration Demo
+# MCP Test - Multi-Server Orchestration (Learning Exercise)
 
-A minimalistic reference implementation demonstrating the **Model Context Protocol (MCP)** with Python. This project showcases how a central Orchestrator communicates with multiple MCP Servers to execute tools.
+A hands-on learning project for the **Model Context Protocol (MCP)** with Python. This project demonstrates how a central Orchestrator communicates with multiple MCP Servers to execute tools.
+
+## Learning Objectives
+
+By completing this exercise, you will learn:
+
+- How to create MCP servers using the Python SDK
+- How to define tools with JSON Schema
+- How to route and execute tool calls
+- How an orchestrator coordinates multiple servers
+
+## Exercise Structure
+
+| Component         | Difficulty   | Description                                                          |
+| ----------------- | ------------ | -------------------------------------------------------------------- |
+| Server A (Math)   | Beginner     | Partially complete - fill in the `_multiply` method                  |
+| Server B (String) | Intermediate | Mostly incomplete - implement tool definitions, routing, and methods |
+| Orchestrator      | Reference    | Complete implementation - study this to understand the client side   |
+
+## Quick Start
+
+1. Complete the TODOs in [src/server_a/server.py](src/server_a/server.py) (easier)
+2. Complete the TODOs in [src/server_b/server.py](src/server_b/server.py) (harder)
+3. Run tests to verify: `pytest tests/ -v`
+4. Check your work against [solutions/](solutions/) folder
 
 ---
 
@@ -73,19 +97,22 @@ mcp_test/
 │   │   └── 05_building_block_view.md
 │   └── c4/
 │       └── c4_model.md         # C4 model with Mermaid diagrams
+├── solutions/                  # SPOILER: Complete implementations
+│   ├── server_a_solution.py    # Solution for Server A
+│   └── server_b_solution.py    # Solution for Server B
 ├── src/
 │   ├── orchestrator/
 │   │   ├── __init__.py
-│   │   └── main.py             # MCP Client implementation
+│   │   └── main.py             # MCP Client (complete - for reference)
 │   ├── server_a/
 │   │   ├── __init__.py
-│   │   └── server.py           # Math/Logic MCP Server
+│   │   └── server.py           # EXERCISE: Math Server (beginner)
 │   └── server_b/
 │       ├── __init__.py
-│       └── server.py           # String/Format MCP Server
+│       └── server.py           # EXERCISE: String Server (intermediate)
 ├── tests/
 │   ├── __init__.py
-│   └── test_integration.py     # Integration tests
+│   └── test_integration.py     # Integration tests (use to verify)
 ├── task.md                     # Exercise requirements
 ├── README.md                   # This file
 └── requirements.txt            # Python dependencies
